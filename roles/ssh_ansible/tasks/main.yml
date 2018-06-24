@@ -1,0 +1,16 @@
+---
+- name: Install OpenSSH server
+  apt: 
+    pkg: openssh-server 
+    state: installed
+    update_cache: true
+  notify:
+   - Start SSH
+
+- name: Add SSH configuration file
+  register: sshconfig
+  template: 
+    src: sshd_config.j2 
+    dest: '/etc/ssh/sshd_config'
+    owner: nick
+    group: nick

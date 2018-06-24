@@ -1,0 +1,4 @@
+---
+- hosts: test_vms
+  roles:
+    - ssh_ansible
