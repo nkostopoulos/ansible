@@ -7,3 +7,9 @@ A repository containing ansible projects
 The authentication is based on public key cryptography.
 
 basic test: ansible test_vms -m shell -a "echo $HOME"
+
+
+Install Ansible:
+sudo apt-add-repository -y ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install -y ansible
