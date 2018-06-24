@@ -1,3 +1,0 @@
-[test_vms]
-192.168.56.101 ansible_user=nick
-192.168.56.102 ansible_user=nick
