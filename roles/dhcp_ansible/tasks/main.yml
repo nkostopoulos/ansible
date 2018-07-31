@@ -1,0 +1,24 @@
+---
+- name: Install DHCP server
+  apt:
+     pkg: isc-dhcp-server
+     state: installed
+     update_cache: true
+
+- name: Add isc-dhcp-server configuration file
+  register: isc_config
+  template:
+     src: isc-dhcp-server.j2
+     dest: '/etc/default/isc-dhcp-server'
+     owner: nick
+     group: nick
+
+- name: Add dhcpd configuration file
+  register: dhcpd_config
+  template:
+     src: dhcpd.j2
+     dest: '/etc/dhcp/dhcpd.conf'
+     owner: nick
+     group: nick
+  notify:
+     - Restart DHCP

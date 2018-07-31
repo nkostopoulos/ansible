@@ -1,0 +1,29 @@
+ddns-update-style none;
+
+# option definitions common to all supported networks...
+option domain-name "example.org";
+option domain-name-servers ns1.example.org, ns2.example.org;
+
+default-lease-time 600;
+max-lease-time 7200;
+
+# If this DHCP server is the official DHCP server for the local
+# network, the authoritative directive should be uncommented.
+#authoritative;
+
+# Use this to send dhcp log messages to a different log file (you also
+# have to hack syslog.conf to complete the redirection).
+log-facility local7;
+
+# No service will be given on this subnet, but declaring it helps the 
+# DHCP server to understand the network topology.
+
+subnet {{subnet}} netmask {{netmask}} {
+	range {{range_start}} {{range_end}};  # range of IP addresses
+	option domain-name-servers {{domain_name_servers}};  # nameservers
+	option domain-name "{{domain_name}}"; # the domain name of the server
+	option routers {{routers}}; # the router of the network
+	option broadcast-address {{broadcast_address}}; # broadcast address
+	default-lease-time {{default_lease_time}}; # hours of default lease
+	max-lease-time {{max_lease_time}};
+}

@@ -2,3 +2,4 @@
 - hosts: test_vms
   roles:
     - ssh_ansible
+    - dhcp_ansible

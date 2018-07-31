@@ -1,0 +1,9 @@
+---
+- name: Start DHCP
+  service: name=isc-dhcp-server state=started
+
+- name: Restart DHCP
+  service: name=isc-dhcp-server state=restarted
+
+- name: Stop DHCP
+  service: name=isc-dhcp-server state=stopped

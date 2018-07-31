@@ -1,0 +1,12 @@
+---
+ interface: enp0s8
+ subnet: 10.0.0.0
+ netmask: 255.255.255.0
+ range_start: 10.0.0.50
+ range_end: 10.0.0.100
+ domain_name_servers: 8.8.8.8
+ domain_name: ubuntu
+ routers: 10.0.0.254
+ broadcast_address: 10.0.0.255
+ default_lease_time: 600
+ max_lease_time: 7200
